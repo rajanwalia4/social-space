@@ -1,11 +1,15 @@
 
 const express = require('express');
+const ejs = require('ejs')
 const app = express();
 const port = 3000;
 
 // use express Router By default routes to '.routes/index.js'
 app.use('/',require('./routes'));
 
+// setting up the view engine
+app.set('view engine','ejs');
+app.set('views','./views');
 
 
 app.listen(port,(err)=>{

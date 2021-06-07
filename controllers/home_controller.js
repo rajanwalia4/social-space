@@ -1,5 +1,7 @@
 module.exports.home = (req,res)=>{
-	return res.end('<h1> Express in running</h1>')
+	return res.render('home',{
+		title: "Home Page"
+	})
 }
 
 module.exports.about = (req,res)=>{
