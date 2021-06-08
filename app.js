@@ -6,11 +6,15 @@ const port = 3000;
 // require express layouts
 const expressLayouts = require('express-ejs-layouts')
 
+// use static files
+app.use(express.static('./assets'))
+
 // use express layouts
 app.use(expressLayouts);
 
-// use static files
-app.use(express.static('./assets'))
+// express styles and subpages from subpages into layouts
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 
 // use express Router By default routes to '.routes/index.js'
 app.use('/',require('./routes'));
@@ -18,6 +22,7 @@ app.use('/',require('./routes'));
 // setting up the view engine
 app.set('view engine','ejs');
 app.set('views','./views');
+
 
 app.listen(port,(err)=>{
 	if(err){
