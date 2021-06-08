@@ -1,7 +1,9 @@
 
 
 module.exports.profile = (req,res) =>{
-	return res.send('<h1> Users profiles</h1>');
+	return res.render('users_profile',{
+		title: "Users Profile"
+	})
 }
 
 module.exports.chat = (req,res) =>{

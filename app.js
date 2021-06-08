@@ -4,6 +4,7 @@ const ejs = require('ejs')
 const app = express();
 const port = 3000;
 
+
 // use express Router By default routes to '.routes/index.js'
 app.use('/',require('./routes'));
 
