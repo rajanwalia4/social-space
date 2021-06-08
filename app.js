@@ -9,6 +9,9 @@ const expressLayouts = require('express-ejs-layouts')
 // use express layouts
 app.use(expressLayouts);
 
+// use static files
+app.use(express.static('./assets'))
+
 // use express Router By default routes to '.routes/index.js'
 app.use('/',require('./routes'));
 
