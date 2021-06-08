@@ -3,9 +3,11 @@ const express = require('express');
 const ejs = require('ejs')
 const app = express();
 const port = 3000;
+
 // require express layouts
 const expressLayouts = require('express-ejs-layouts')
-
+// require mongoose connection from config
+const db = require('./config/mongoose')
 // use static files
 app.use(express.static('./assets'))
 
