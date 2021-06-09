@@ -20,6 +20,18 @@ module.exports.signIn = (req,res)=>{
 	});
 }
 
+// get the sign up data
+module.exports.create = (req,res)=>{
+	// To Do
+}
+
+
+//  Sign In and create a Session For the User
+module.exports.createSession = (req,res)=>{
+	// To Do
+}
+
+
 module.exports.chat = (req,res) =>{
 	return res.send('<h2>User Chat</h2>');
 }
