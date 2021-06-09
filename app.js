@@ -1,15 +1,25 @@
 
 const express = require('express');
+// Require cookie-parser to use cookies
+const cokieParser = require('cookie-parser');
+
 const ejs = require('ejs')
 const app = express();
 const port = 3000;
 
 // require express layouts
-const expressLayouts = require('express-ejs-layouts')
+const expressLayouts = require('express-ejs-layouts');
 // require mongoose connection from config
 const db = require('./config/mongoose')
+
+// To get data from post request
+app.use(express.urlencoded({extended:true}));
+
+// To use cookies
+app.use(cokieParser());
+
 // use static files
-app.use(express.static('./assets'))
+app.use(express.static('./assets'));
 
 // use express layouts
 app.use(expressLayouts);
