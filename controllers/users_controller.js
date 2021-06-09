@@ -1,3 +1,6 @@
+// require the user model to use it
+const User = require('../models/user')
+
 
 //Render User Profile page
 module.exports.profile = (req,res) =>{
@@ -22,7 +25,32 @@ module.exports.signIn = (req,res)=>{
 
 // get the sign up data
 module.exports.create = (req,res)=>{
-	// To Do
+
+	// password not match
+	if(req.body.password!=req.body.confirm_password){
+		return res.redirect("back");
+	}
+	
+	User.findOne({email : req.body.email},(err,user)=>{
+		if(err){
+			console.log("Error in finding the User in Signing up!");
+			return res.redirect("back");
+		}
+		// Create new user as it is not present
+		if(!user){
+			User.create(req.body,(err,user)=>{
+				if(err){
+					console.log("Error in finding the User in Signing up!");
+					return res.redirect("back");
+				}
+				
+				// redirect to the sign in page
+				return res.redirect("/users/sign-in")
+			});
+		}else{	// user is already present in db
+			return res.redirect("back");
+		}
+	});
 }
 
 

@@ -9,17 +9,17 @@ const userSchema = new mongoose.Schema({
 	},
 	password:{
 		type:String,
-		required:true,
+		required:true
 	},
 	name:{
-		type:true,
-		require:true
+		type:String,
+		required :true
 	}
 },{
 	timestamps:true
 });
 
 // Created a User Model
-const User = mongoose.model('user',userSchema);
+const User = mongoose.model('User',userSchema);
 
 module.exports = User;

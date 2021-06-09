@@ -15,6 +15,9 @@ router.get('/sign-up',usersController.signUp);
 // Route to the 'usersController.signIn'
 router.get('/sign-in',usersController.signIn);
 
+// Route to the 'usersController.create'
+router.post('/create',usersController.create);
+
 // Route to the 'usersController.profile'
 router.get('/chat',usersController.chat);
 
