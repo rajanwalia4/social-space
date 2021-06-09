@@ -7,7 +7,6 @@ const homeController = require('../controllers/home_controller');
 
 console.log("Routes Loaded");
 
-
 // routing to the 'homeController.home'
 router.get('/',homeController.home);
 

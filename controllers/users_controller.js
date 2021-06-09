@@ -1,9 +1,23 @@
 
-
+//Render User Profile page
 module.exports.profile = (req,res) =>{
-	return res.render('users_profile',{
+	return res.render('user_profile',{
 		title: "Users Profile"
 	})
+}
+
+//Render User sign up Page
+module.exports.signUp = (req,res)=>{
+	return res.render('user_sign_up',{
+		title:"Socialspace | Sign Up"
+	});
+}
+
+//Render User sign In Page
+module.exports.signIn = (req,res)=>{
+	return res.render('user_sign_in',{
+		title:"Socialspace | Sign In"
+	});
 }
 
 module.exports.chat = (req,res) =>{
