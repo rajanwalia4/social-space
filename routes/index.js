@@ -16,4 +16,7 @@ router.use('/users',require('./users'))
 // route to './post.js' route if request comes on '/posts'
 router.use('/posts',require('./posts'))
 
+// for any further routes, access from here
+// router.use('/routerName', require('./routerfile));
+
 module.exports = router;

@@ -22,7 +22,7 @@ passport.use(new LocalStrategy({
                 return done(null, false);
             }
 
-            return done(null, user);
+            return done(null, user); // Authenticate user and go to the serializer
         });
     }
 
@@ -34,8 +34,6 @@ passport.use(new LocalStrategy({
 passport.serializeUser(function(user, done){
     done(null, user.id);
 });
-
-
 
 // deserializing the user from the key in the cookies
 passport.deserializeUser(function(id, done){

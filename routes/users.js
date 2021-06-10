@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
 // import the users controller
 const usersController = require('../controllers/users_controller');
@@ -18,13 +19,13 @@ router.get('/sign-in',usersController.signIn);
 // Route to the 'usersController.create'
 router.post('/create',usersController.create);
 
-// Route to the 'userController.createSession"
-router.post('/create-session',usersController.createSession);
+// Route to the 'userController.createSession" and use passport as a middleware to authenticate
+router.post('/create-session', passport.authenticate(
+    'local',
+    {failureRedirect: '/users/sign-in'},
+), usersController.createSession);
 
-// Route to delete the Session
-router.get("/sign-out",usersController.signOut);
 // Route to the 'usersController.profile'
 router.get('/chat',usersController.chat);
-
 
 module.exports = router;
