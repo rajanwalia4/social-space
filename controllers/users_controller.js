@@ -74,6 +74,11 @@ module.exports.createSession = (req,res)=>{
     return res.redirect('/users/profile');
 }
 
+// To destroy the session of the user
+module.exports.destroySession = (req,res)=>{
+	req.logout();
+	return res.redirect('/');
+}
 
 module.exports.chat = (req,res) =>{
 	return res.send('<h2>User Chat</h2>');

@@ -25,6 +25,9 @@ router.post('/create-session', passport.authenticate(
     {failureRedirect: '/users/sign-in'},
 ), usersController.createSession);
 
+// Route to destroy the session of the user
+router.get('/sign-out',usersController.destroySession);
+
 // Route to the 'usersController.profile'
 router.get('/chat',usersController.chat);
 
