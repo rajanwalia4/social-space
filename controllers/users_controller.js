@@ -11,6 +11,13 @@ module.exports.profile = (req,res) =>{
 
 //Render User sign up Page
 module.exports.signUp = (req,res)=>{
+	if(req.isAuthenticated()){
+		console.log("User authenticated at signup");
+		return res.redirect('/users/profile');
+	}
+	
+	console.log("User not authenticated at signup");
+	
 	return res.render('user_sign_up',{
 		title:"Socialspace | Sign Up"
 	});
@@ -18,6 +25,13 @@ module.exports.signUp = (req,res)=>{
 
 //Render User sign In Page
 module.exports.signIn = (req,res)=>{
+	if(req.isAuthenticated()){
+		console.log("User authenticated at signin");
+		return res.redirect('/users/profile');
+	}
+	
+	console.log("User not authenticated at signin");
+	
 	return res.render('user_sign_in',{
 		title:"Socialspace | Sign In"
 	});
@@ -57,7 +71,7 @@ module.exports.create = (req,res)=>{
 //  Sign In and create a Session For the User
 module.exports.createSession = (req,res)=>{
 	console.log("createSession");
-    return res.redirect('/');
+    return res.redirect('/users/profile');
 }
 
 
