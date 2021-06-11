@@ -58,6 +58,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(passport.setAuthenticatedUser);
+
 // after using initializing passport and session, use express Router By default routes to '.routes/index.js'
 app.use('/',require('./routes'));
 
