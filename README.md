@@ -4,5 +4,10 @@ A social media app
 ## Install following packages
 
 ```
-npm express ejs express-ejs-layouts mongodb mongoose cookie-parser passport passport-local express-session
+npm i express ejs express-ejs-layouts mongodb mongoose cookie-parser passport passport-local express-session 
+```
+
+### To store session data in db install following package
+```
+npm i connect-mongo
 ```

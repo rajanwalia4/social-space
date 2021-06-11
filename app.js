@@ -18,9 +18,11 @@ const session = require('express-session');
 // require passport 
 const passport = require('passport');
 
-const LocalStrategy = require('./config/passport-local-strategy')
+const LocalStrategy = require('./config/passport-local-strategy');
+//const { Session } = require('express-session');
 
-
+// Used to store session data in db
+const MongoStore = require('connect-mongo');
 
 // To get data from post request
 app.use(express.urlencoded({extended:true}));
@@ -43,6 +45,7 @@ app.set('layout extractScripts',true);
 app.set('view engine','ejs');
 app.set('views','./views');
 
+// Mongo store is used to store the session cookie in db
 app.use(session({
     name: 'socialspace',
     // TODO change the secret before deployment in production mode
@@ -51,7 +54,12 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000 * 60 * 100)
-    }
+    },store: MongoStore.create({
+        mongoUrl: 'mongodb://localhost/socialspace_developement',
+        autoRemove: 'disabled'
+      },(err)=>{
+          console.log(err || "connect-mongodb setup ok");
+      })
 }));
 
 // Allow app to use passport and passport.session
