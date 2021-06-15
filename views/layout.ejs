@@ -6,14 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><%= title %> </title>
 	<link rel="stylesheet" href="/css/layouts.css">
+	<link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="/css/footer.css">
 	<%- style %> <!-- Include corresponding page CSS-->
 	<%- script %> <!-- Include corresponding page JS-->
 </head>
 <body>
 	
 <%- include('_header') -%> 
-
-<%- body %> <!-- Use to fill the other ejs files-->
+<main id="layout-main">
+	<%- body %> <!-- Use to fill the other ejs files-->
+</main >
 
 <%- include('_footer') -%> 
 

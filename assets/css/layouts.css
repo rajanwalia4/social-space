@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  text-align: left; }
+  body #layout-main {
+    height: 100vh;
+    padding: 20px;
+    background-color: antiquewhite; }
