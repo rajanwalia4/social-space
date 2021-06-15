@@ -24,6 +24,20 @@ const LocalStrategy = require('./config/passport-local-strategy');
 // Used to store session data in db
 const MongoStore = require('connect-mongo');
 
+// to use sass in the app to preprocess the css
+const sassMiddleware = require('node-sass-middleware');
+
+// use sass Middleware to use scss
+app.use(sassMiddleware({
+    src: '/assets/scss',
+    dest: '/assets/css',
+    debug:true,
+    outputStyle: 'extended',
+    prefix: '/css'
+}));
+
+
+
 // To get data from post request
 app.use(express.urlencoded({extended:true}));
 
