@@ -12,9 +12,8 @@ npm i express ejs express-ejs-layouts mongodb mongoose cookie-parser passport pa
 npm i connect-mongo
 ```
 
-// To use SASS 
-```
-npm i connect-mongo
+### To use SASS 
+
 ```
 npm install node-sass-middleware
 ```
