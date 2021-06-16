@@ -9,4 +9,6 @@ console.log("Posts. route loaded");
 // Route to 'postController.post'
 router.get('/post',postController.post);
 
+router.post('/create',postController.create);
+
 module.exports = router;
