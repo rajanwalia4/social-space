@@ -1,3 +1,4 @@
+
 function validform() {
 	
 	var a = document.forms["my-form"]["name"].value;

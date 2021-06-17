@@ -5,7 +5,7 @@ const User = require('../models/user')
 //Render User Profile page
 module.exports.profile = (req,res) =>{
 	return res.render('user_profile',{
-		title: "Users Profile"
+		title: "SocialSpace | Users Profile"
 	})
 }
 
@@ -19,7 +19,7 @@ module.exports.signUp = (req,res)=>{
 	console.log("User not authenticated at signup");
 	
 	return res.render('user_sign_up',{
-		title:"Socialspace | Sign Up"
+		title:"SocialSpace | Sign Up"
 	});
 }
 
@@ -33,7 +33,7 @@ module.exports.signIn = (req,res)=>{
 	console.log("User not authenticated at signin");
 	
 	return res.render('user_sign_in',{
-		title:"Socialspace | Sign In"
+		title:"SocialSpace | Sign In"
 	});
 }
 
