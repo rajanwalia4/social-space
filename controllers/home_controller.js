@@ -20,7 +20,6 @@ module.exports.home = (req,res)=>{
 	// 		posts : posts
 	// 	})
 	// })
-	console.log(res.locals);
 	// Populate the user of each post
 	Post.find({}).populate('user').exec((err,posts)=>{
 		if(err){
@@ -32,7 +31,7 @@ module.exports.home = (req,res)=>{
 			posts : posts
 		})
 	})
-
+	
 }
 
 module.exports.about = (req,res)=>{
