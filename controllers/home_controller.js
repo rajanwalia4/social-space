@@ -20,8 +20,17 @@ module.exports.home = (req,res)=>{
 	// 		posts : posts
 	// 	})
 	// })
-	// Populate the user of each post
-	Post.find({}).populate('user').exec((err,posts)=>{
+	// Populate the user of each post 
+	Post.find({})
+	.populate('user')
+	.populate({  // Also populate comments on each post along with the user who commented
+		path:'comments',
+		populate:{
+			path:'user' // Nesting population comments and user
+		}
+	})
+	.exec((err,posts)=>{
+		console.log(err);
 		if(err){
 			console.log("Error in finding the posts");
 			return ;
