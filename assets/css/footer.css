@@ -5,4 +5,7 @@ footer {
   height: 70px;
   background-color: darkblue;
   color: white;
-  font-size: 18px; }
+  font-size: 18px;
+  width: 100%;
+  position: static;
+  bottom: 0; }
