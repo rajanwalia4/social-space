@@ -1,0 +1,25 @@
+li {
+  list-style-type: none; }
+
+body {
+  background-color: gainsboro; }
+
+.form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #ffc107; }
+
+.my-form {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
+
+.my-form .row {
+  margin-left: 0;
+  margin-right: 0; }
+
+.login-form {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
+
+.login-form .row {
+  margin-left: 0;
+  margin-right: 0; }

@@ -19,14 +19,14 @@
     <%- script %>
     <!-- Include corresponding page JS-->
   </head>
+
   <body>
     <%- include('_header') -%>
-    <main id="layout-main">
-		<div class="container">
-				<!-- Use to fill the other ejs files-->
-			<%- body %>
-		</div>
-    </main>
+
+    <div class="container">
+      <!-- Use to fill the other ejs files-->
+      <%- body %>
+    </div>
 
     <%- include('_footer') -%>
     <script
