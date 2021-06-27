@@ -40,6 +40,11 @@
             <div class="card my-3">
                 <div class="card-header">
                     <%= post.user.name %>
+                    <% if(locals.user && locals.user.id ==post.user.id ){ %> 
+                        <small style="float: right;">
+                            <a href="/posts/destroy/<%= post.id %>"> Delete</a>
+                        </small>
+                    <% } %> 
                 </div>
                 <div class="card-body py-1">
                     <div class="form-group">

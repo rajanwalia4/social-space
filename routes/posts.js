@@ -12,4 +12,6 @@ router.get('/post',postController.post);
 
 router.post('/create',passport.checkAuthentication ,postController.create);
 
+// Route to delete the post
+router.get('/destroy/:id',passport.checkAuthentication,postController.destroy);
 module.exports = router;
