@@ -29,6 +29,7 @@ module.exports.home = (req,res)=>{
 			path:'user' // Nesting population comments and user
 		}
 	})
+	.sort({ createdAt: -1 })	// sort the posts creation timestamp
 	.exec((err,posts)=>{
 		console.log(err);
 		if(err){
