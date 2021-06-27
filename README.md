@@ -34,5 +34,5 @@ npm install node-sass-middleware
 ### 3. Home Page to create post
 <img src="/readmd-images/img3.png" height="500px">
 
-### 1. Posts having comments
+### 4. Posts having comments
 <img src="/readmd-images/img4.png" height="500px">
