@@ -35,4 +35,4 @@ npm install node-sass-middleware
 <img src="/readmd-images/img3.png" height="500px">
 
 ### 1. Posts having comments
-<img src="/readmd-images/img5.png" height="500px">
+<img src="/readmd-images/img4.png" height="500px">
