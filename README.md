@@ -18,9 +18,9 @@ npm i connect-mongo
 npm install node-sass-middleware
 ```
 ## Features
-### 1. User Authentication using Passport.js
-### 2. Creating Post and storing it into DB.
-### 3. Commenting on a post.
+1. User Authentication using Passport.js
+2. Creating Post and storing it into DB.
+3. Commenting on a post.
 
 
 ## Screenshots of the project
