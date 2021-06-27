@@ -10,4 +10,7 @@ console.log("comments route loaded");
 //route to add a comment on a post
 router.post('/create',passport.checkAuthentication ,commentsController.create);
 
+// route to delete the comment 
+router.get('/destroy/:id',passport.checkAuthentication,commentsController.destroy);
+
 module.exports = router;
