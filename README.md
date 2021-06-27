@@ -26,13 +26,13 @@ npm install node-sass-middleware
 ## Screenshots of the project
 
 ### 1. Sign in Page
-<img src="/readmd-images/img1.png" height="500px">
+<img src="/readme-images/img1.png" height="500px">
 
 ### 2. Sign up Page
-<img src="/readmd-images/img2.png" height="500px">
+<img src="/readme-images/img2.png" height="500px">
 
 ### 3. Home Page to create post
-<img src="/readmd-images/img3.png" height="500px">
+<img src="/readme-images/img3.png" height="500px">
 
 ### 4. Posts having comments
-<img src="/readmd-images/img4.png" height="500px">
+<img src="/readme-images/img4.png" height="500px">
