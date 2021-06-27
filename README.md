@@ -23,7 +23,7 @@ npm install node-sass-middleware
 ### 3. Commenting on a post.
 
 
-### Screenshots of the project
+## Screenshots of the project
 
 ### 1. Sign in Page
 <img src="/readmd-images/img1.png" height="500px">
