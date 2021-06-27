@@ -17,3 +17,6 @@ npm i connect-mongo
 ```
 npm install node-sass-middleware
 ```
+### Screenshots of the project
+
+<img src="/readmd-images/img1.png" height="400px">
