@@ -8,7 +8,7 @@ const usersController = require('../controllers/users_controller');
 console.log("Users route loaded");
 
 // Route to the 'usersController.profile' first check Authentication if user is signed in only then go to the profile
-router.get('/profile',passport.checkAuthentication,usersController.profile);
+router.get('/profile/:id',passport.checkAuthentication,usersController.profile);
 
 // Route to the 'usersController.SignUp'
 router.get('/sign-up',usersController.signUp);

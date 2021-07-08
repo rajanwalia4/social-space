@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = (req,res)=>{
 	
@@ -31,15 +32,18 @@ module.exports.home = (req,res)=>{
 	})
 	.sort({ createdAt: -1 })	// sort the posts creation timestamp
 	.exec((err,posts)=>{
-		console.log(err);
-		if(err){
-			console.log("Error in finding the posts");
-			return ;
-		}
-		return res.render('home',{
-			title: "Home Page",
-			posts : posts
-		})
+		User.find({},function(err,users){
+			if(err){
+				console.log("Error in finding the posts");
+				return ;
+			}
+			return res.render('home',{
+				title: "Home Page",
+				posts : posts,
+				all_users:users
+			});
+		});
+		
 	})
 	
 }

@@ -1,0 +1,14 @@
+<div class="col-md-5 float-right">
+	<div class="card my-3">
+		<div class="card-header">
+			Friends
+		</div>
+		<div class="card-body py-1">
+			<div class="form-group">
+				<% for(user of all_users){ %> 
+					<li> <a href="users/profile/<%= user.id %>"> <%= user.name %> </a> </li>
+				<% } %> 
+			</div>
+		</div>
+	</div>
+</div>

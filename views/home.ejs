@@ -24,7 +24,7 @@
                                         Post
                                     </button>
                                 </div>
-                        </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -33,10 +33,11 @@
         </div>
     </main>
     <% } %>
-
+    <%- include ("_user_friends") %>
     <div class="container post-list-container">
         <% for(post of posts){ %>
             <%- include ("_post") %>
         <% } %>
+        
     </div>
 </section>

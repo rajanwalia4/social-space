@@ -4,9 +4,13 @@ const User = require('../models/user')
 
 //Render User Profile page
 module.exports.profile = (req,res) =>{
-	return res.render('user_profile',{
-		title: "SocialSpace | Users Profile"
+	User.findById(req.params.id,function(err,user){
+		return res.render('user_profile',{
+			title: "SocialSpace | Users Profile",
+			profile_user:user
+		});
 	})
+	
 }
 
 //Render User sign up Page
