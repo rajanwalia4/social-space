@@ -1,0 +1,16 @@
+<li>
+	<div class="row">
+		<div class="col col-md-2">
+			<small style="color:green"> <b><%= comment.user.name %></b> 
+				<% if(locals.user && locals.user.id == comment.user.id ){ %> 
+					<a title="Delete comment" href="/comments/destroy/<%= comment.id %>" > ❌ </a>
+				<% } %> 
+			</small>
+		</div>
+		<div class="col col-md-9">
+			<p>
+				<%= comment.content %>
+			</p>
+		</div>
+	</div>
+</li>

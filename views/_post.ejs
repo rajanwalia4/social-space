@@ -1,0 +1,51 @@
+<div class="col-md-6">
+	<div class="card my-3">
+		<div class="card-header">
+			<%= post.user.name %>
+			<% if(locals.user && locals.user.id ==post.user.id ){ %> 
+				<small style="float: right;">
+					<a href="/posts/destroy/<%= post.id %>"> Delete</a>
+				</small>
+			<% } %> 
+		</div>
+		<div class="card-body py-1">
+			<div class="form-group">
+				<p>
+					<%= post.content %>
+				</p>
+			</div>
+
+			<div class="post-comments">
+
+				<% if(locals.user){ %>
+				<hr class="my-1">
+				<form name="my-form" onsubmit="return validform()" action="/comments/create" method="post">
+					<div class="form-group row my-1">
+
+						<div class="col col-md-8">
+							<input type="text" name="content" class="form-control" style="width:100%;"
+								placeholder="Add comment...">
+							<input type="hidden" name="post" value="<%= post._id %>">
+						</div>
+
+						<div class="col col-md-4">
+							<button type="submit" class="btn btn-warning text-light py-1">Add Comment</button>
+						</div>
+					</div>
+				</form>
+				<% } %>
+			</div>
+		</div>
+		<div class="post-comments-list px-3">
+			<% if(post.comments){%>
+			<hr class="my-1">
+			<h4>Comments</h4>
+			<% } %>
+			<ul class="list-group" id="post-comments-<%= post._id %>">
+				<% for(comment of post.comments){ %>
+					<%- include("_comment") %> 
+				<% } %>
+			</ul>
+		</div>
+	</div>
+</div>
