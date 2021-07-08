@@ -2,7 +2,7 @@
 <script src="/js/home.js"></script>
 
 <section id="feed-posts">
-
+    
     <% if(locals.user){ %>
     <main class="my-form">
         <div class="container">
@@ -28,12 +28,13 @@
                         </form>
                     </div>
                 </div>
+                <%- include ("_user_friends") %>
             </div>
         </div>
         </div>
     </main>
     <% } %>
-    <%- include ("_user_friends") %>
+    
     <div class="container post-list-container">
         <% for(post of posts){ %>
             <%- include ("_post") %>

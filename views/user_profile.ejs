@@ -8,6 +8,28 @@
                     <div class="card">
                         <div class="card-header">User Profile</div>
                         <div class="card-body">
+                            <% if(user.id == profile_user.id){ %> 
+                            <form name="my-form" onsubmit="return validform()" action="/users/update/<%= user.id %>" method="post">
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="full_name" class="form-control" name="name" value="<%= user.name %>" >
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="email_address" class="form-control" name="email" value="<%= user.email %>" >
+                                    </div>
+                                </div> 
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-warning text-light">
+                                    Update Profile
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                         <% }else{ %> 
                             <!-- <form name="my-form" onsubmit="return validform()" action="/users/create-session" method="post"> -->
 								<div class="form-group row">
 									<label for="user_name" class="col-md-4 col-form-label text-md-right">Name</label>
@@ -22,13 +44,10 @@
 	                                        <input type="text"  disabled id="email_address" class="form-control" name="email" value="<%= profile_user.email %>">
 	                                    </div>
 	                                </div>
-	                           
-                            <!-- </form> -->
+	                           <% } %> 
                         </div>
                     </div>
             </div>
         </div>
     </div>
 </main>
-
-

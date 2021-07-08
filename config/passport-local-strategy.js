@@ -25,8 +25,6 @@ passport.use(new LocalStrategy({
             return done(null, user); // Authenticate user and go to the serializer
         });
     }
-
-
 ));
 
 

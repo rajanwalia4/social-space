@@ -10,6 +10,9 @@ console.log("Users route loaded");
 // Route to the 'usersController.profile' first check Authentication if user is signed in only then go to the profile
 router.get('/profile/:id',passport.checkAuthentication,usersController.profile);
 
+// Route to update profile
+router.post('/update/:id',passport.checkAuthentication,usersController.update);
+
 // Route to the 'usersController.SignUp'
 router.get('/sign-up',usersController.signUp);
 

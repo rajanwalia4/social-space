@@ -10,14 +10,24 @@ module.exports.profile = (req,res) =>{
 			profile_user:user
 		});
 	})
-	
+}
+
+// Update Profile
+module.exports.update = (req,res) =>{
+	if(req.user.id == req.params.id){
+		User.findByIdAndUpdate(req.params.id, req.body, function(err,user){
+			return res.redirect("back");
+		});
+	}else{
+		return res.status(401).send("Unauthorized");
+	}
 }
 
 //Render User sign up Page
 module.exports.signUp = (req,res)=>{
 	if(req.isAuthenticated()){
 		console.log("User authenticated at signup");
-		return res.redirect('/users/profile');
+		return res.redirect(`/users/profile/${req.user.id}`);
 	}
 	
 	console.log("User not authenticated at signup");
@@ -31,7 +41,7 @@ module.exports.signUp = (req,res)=>{
 module.exports.signIn = (req,res)=>{
 	if(req.isAuthenticated()){
 		console.log("User authenticated at signin");
-		return res.redirect('/users/profile');
+		return res.redirect(`/users/profile/${req.user.id}`);
 	}
 	
 	console.log("User not authenticated at signin");
@@ -75,7 +85,7 @@ module.exports.create = (req,res)=>{
 //  Sign In and create a Session For the User
 module.exports.createSession = (req,res)=>{
 	console.log("createSession");
-    return res.redirect('/users/profile');
+    return res.redirect('/');
 }
 
 // To destroy the session of the user
