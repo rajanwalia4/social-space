@@ -10,7 +10,8 @@ module.exports.home = async (req,res)=>{
 			populate:{
 				path:'user' // Nesting population comments and user
 			}
-		});
+		})
+		.sort({ createdAt: -1 });	
 		
 		let users = await User.find({}); // wait for this task to complete
 		
