@@ -11,9 +11,11 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
     <link rel="stylesheet" href="/css/layouts.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     <%- style %>
     <!-- Include corresponding page CSS-->
     <%- script %>
@@ -22,9 +24,6 @@
 
   <body>
     <%- include('_header') -%>
-    <% if(flash.success && flash.success.length>0){ %>
-      <%= flash.success %> 
-      <% } %> 
 
     <div class="container">
       <!-- Use to fill the other ejs files-->
@@ -47,5 +46,28 @@
       integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
       crossorigin="anonymous"
     ></script>
+    
+    <script>
+      <!-- flash messages using noty cdn is above of css,js-->
+      <% if(flash.success && flash.success.length>0){ %>
+        new Noty({
+          theme: 'sunset',
+          text: "<%= flash.success %>",
+          type: 'success',
+          layout:'topRight',
+          timeout:2000
+      }).show();
+      <% } %>
+      
+      <% if(flash.error && flash.error.length>0){ %>
+        new Noty({
+          theme: 'sunset',
+          text: "<%= flash.error %>",
+          type: 'error',
+          layout:'topRight',
+          timeout:2000
+      }).show();
+      <% } %>
+    </script>
   </body>
 </html>
