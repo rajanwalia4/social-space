@@ -22,6 +22,9 @@
 
   <body>
     <%- include('_header') -%>
+    <% if(flash.success && flash.success.length>0){ %>
+      <%= flash.success %> 
+      <% } %> 
 
     <div class="container">
       <!-- Use to fill the other ejs files-->

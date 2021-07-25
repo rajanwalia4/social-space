@@ -84,12 +84,15 @@ module.exports.create = (req,res)=>{
 
 //  Sign In and create a Session For the User
 module.exports.createSession = (req,res)=>{
+	//With the flash middleware in place, all requests will have a req.flash() function that can be used for flash messages.
 	console.log("createSession");
+	req.flash('success',"Logged In successfully");
     return res.redirect('/');
 }
 
 // To destroy the session of the user
 module.exports.destroySession = (req,res)=>{
+	req.flash('success',"You have Logged out");
 	req.logout();
 	return res.redirect('/');
 }

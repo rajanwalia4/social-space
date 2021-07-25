@@ -17,6 +17,13 @@ npm i connect-mongo
 ```
 npm install node-sass-middleware
 ```
+
+### To use flash messages
+
+```
+npm install connect-flash
+```
+
 ## Features
 1. User Authentication using Passport.js
 2. Creating Post and storing it into DB.
