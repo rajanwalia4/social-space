@@ -12,6 +12,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="/css/layouts.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
@@ -32,11 +34,6 @@
 
     <%- include('_footer') -%>
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
       crossorigin="anonymous"
@@ -48,8 +45,8 @@
     ></script>
     
     <script>
-      <!-- flash messages using noty cdn is above of css,js-->
-      <% if(flash.success && flash.success.length>0){ %>
+      <%# flash messages using noty cdn is above of css,js %>
+      <%_ if(flash.success && flash.success.length>0){ %>
         new Noty({
           theme: 'sunset',
           text: "<%= flash.success %>",
@@ -57,7 +54,7 @@
           layout:'topRight',
           timeout:2000
       }).show();
-      <% } %>
+      <%_ } %>
       
       <% if(flash.error && flash.error.length>0){ %>
         new Noty({

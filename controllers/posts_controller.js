@@ -13,6 +13,15 @@ module.exports.create = async (req,res)=>{
 			content : req.body.content,
 			user : req.user._id
 		});
+		console.log("request come")
+		if(req.xhr){ // if it is an AJAX (xmlHttpRequest then send JSON to home_post.js
+			return res.status(200).json({
+				response :{
+					post : post
+				},
+				message : "Post Created"
+			})
+		}
 		req.flash('success',"Post created successfully");
 		return res.redirect("back");
 	}

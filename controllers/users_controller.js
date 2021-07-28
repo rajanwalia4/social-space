@@ -16,7 +16,7 @@ module.exports.profile = (req,res) =>{
 module.exports.update = (req,res) =>{
 	if(req.user.id == req.params.id){
 		User.findByIdAndUpdate(req.params.id, req.body, function(err,user){
-			return res.redirect("back");
+			return res.redirect("/");
 		});
 	}else{
 		return res.status(401).send("Unauthorized");
